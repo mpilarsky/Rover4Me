@@ -1,13 +1,13 @@
 ![Logo](public/assets/readme/logo.png)
 
-## Krótki opis aplikacji
+## 🪶 Krótki opis aplikacji
 Rover4Me to nowoczesna platforma wypożyczalni rowerów, która umożliwia łatwe i szybkie rezerwowanie rowerów na różne okazje.
 
 Aplikacja umożliwia przeglądanie dostępnych rowerów, rezerwację wybranego modelu na wybrany termin oraz śledzenie szczegółów rezerwacji, takich jak lokalizacja, godzina wypożyczenia i zakończenia oraz wielkość ramy. Rezerwacja odbywa się poprzez prosty formularz, a po zakończeniu okresu wypożyczenia możesz łatwo oddać rower w dogodnym dla siebie punkcie.
 
 Dzięki prostemu i intuicyjnemu interfejsowi, Rover4Me zapewnia wygodne korzystanie z usług wypożyczalni w każdej chwili, bez zbędnych formalności.
 
-## Działanie
+## ⚙️ Działanie
 ### Strona Główna
 ![Strona Główna](public/assets/readme/main.jpg)
 
@@ -37,18 +37,18 @@ Panel moderatora pozwala na przeglądanie rezerwacji wszystkich użytkowników, 
 ### Panel Administratora
 ![Panel Administratora](public/assets/readme/adminpanel.jpg)
 
-Panel moderatora pozwala na przeglądanie wszystkich użytkowników oraz usuwanie ich.
+Panel administratora pozwala na przeglądanie wszystkich użytkowników oraz usuwanie ich.
 
-## Diagram ERD
+## ↹ Diagram ERD
 ![Diagram ERD](public/assets/readme/erd.png)
 
 Powyższy diagram przedstawia strukturę bazy danych aplikacji, w tym powiązania między tabelami użytkowników, rezerwacji i rowerów.
 
-## Użyte technologie
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: PHP
-- **Baza danych**: PostgreSQL
-- **Inne**: Docker
+## 🛠 Użyte technologie
+- ✅ **Frontend**: HTML, CSS, JavaScript
+- ✅ **Backend**: PHP
+- ✅ **Baza danych**: PostgreSQL
+- ✅ **Inne**: Docker
 
-## Autor
+## 👤 Autor
 Aplikacja stworzona przez [@mpilarsky](https://www.github.com/mpilarsky).
