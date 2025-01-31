@@ -45,10 +45,10 @@ Panel administratora pozwala na przeglądanie wszystkich użytkowników oraz usu
 Powyższy diagram przedstawia strukturę bazy danych aplikacji, w tym powiązania między tabelami użytkowników, rezerwacji i rowerów.
 
 ## 🛠 Użyte technologie
-- ✅ **Frontend**: HTML, CSS, JavaScript
-- ✅ **Backend**: PHP
-- ✅ **Baza danych**: PostgreSQL
-- ✅ **Inne**: Docker
+✅ **Frontend**: HTML, CSS, JavaScript
+✅ **Backend**: PHP
+✅ **Baza danych**: PostgreSQL
+✅ **Inne**: Docker
 
 ## 👤 Autor
 Aplikacja stworzona przez [@mpilarsky](https://www.github.com/mpilarsky).
