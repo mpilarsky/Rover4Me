@@ -7,7 +7,7 @@ class UserRepository extends Repository {
 
     public function getUser(string $email): ?User {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users WHERE email = :email
+            SELECT users.*, permissions.*  FROM users  JOIN permissions ON users.id = permissions.user_id  WHERE users.email = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -24,8 +24,11 @@ class UserRepository extends Repository {
             $user['password'],
             $user['name'],
             $user['surname'],
-            $user['age']
+            $user['age'],
+            $user['isadmin'],
+            $user['ismod']
         );
+
     }
 
     public function addUser(User $user): bool {
@@ -42,14 +45,28 @@ class UserRepository extends Repository {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO users (email, password, name, surname, age)
             VALUES (:email, :password, :name, :surname, :age)
+            RETURNING id
         ');
 
-        return $stmt->execute([
+        $result = $stmt->execute([
             ':email' => $user->getEmail(),
             ':password' => password_hash($user->getPassword(), PASSWORD_BCRYPT),
             ':name' => $user->getName(),
             ':surname' => $user->getSurname(),
             ':age' => $user->getAge()
         ]);
+
+        if ($result) {
+            $userId = $stmt->fetchColumn();
+    
+            $stmt = $this->database->connect()->prepare('
+                INSERT INTO permissions (user_id, isadmin, ismod)
+                VALUES (:user_id, 0, 0)
+            ');
+    
+            $stmt->execute([':user_id' => $userId]);
+        }
+    
+        return $result;
     }
 }

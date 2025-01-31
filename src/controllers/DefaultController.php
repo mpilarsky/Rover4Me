@@ -26,5 +26,22 @@ class DefaultController extends AppController{
     
         $this->render('userDashboard');
     }
-
+    public function modDashboard(){
+        session_start();
+        if (!isset($_SESSION['user_id'])) {
+            echo "<script>window.location.href = '/login';</script>";
+            exit();
+        }
+    
+        $this->render('modDashboard');
+    }
+    public function adminDashboard(){
+        session_start();
+        if (!isset($_SESSION['user_id'])) {
+            echo "<script>window.location.href = '/login';</script>";
+            exit();
+        }
+    
+        $this->render('adminDashboard');
+    }
 }

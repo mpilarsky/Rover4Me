@@ -11,6 +11,10 @@ $path=parse_url($path, PHP_URL_PATH);
 Routing::get('', 'DefaultController');
 Routing::get('dashboard', 'DefaultController');
 Routing::get('userDashboard', 'DefaultController');
+
+Routing::get('modDashboard', 'DefaultController');
+Routing::get('adminDashboard', 'DefaultController');
+
 Routing::get('login', 'DefaultController');
 Routing::get('signup', 'DefaultController');
 Routing::get('login', 'SecurityController');
@@ -26,15 +30,3 @@ Routing::post('logout', 'SecurityController');
 
 
 Routing::run($path);
-
-/*
-git
-zrobić funkcje admina
-readme
-erd
-fetch api
-uprawnienia
-role (admin to chyba to)
-bezpieczeństwo (jakieś zabezpieczenie czy dublujemy maila)
-ogólnie ogarnać css
-*/

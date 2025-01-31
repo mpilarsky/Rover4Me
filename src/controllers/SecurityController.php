@@ -37,7 +37,19 @@ class SecurityController extends AppController {
         }
 
         $_SESSION['user_id'] = $user->getId();
-        echo "<script>window.location.href = '/userDashboard';</script>";
+        $_SESSION['isAdmin'] = $user->getisAdmin();
+        $_SESSION['isMod'] = $user->getisMod();
+
+        var_dump($user->getisAdmin());
+        var_dump($user->getisMod());
+
+        if($user->getisAdmin()) {
+            echo "<script>window.location.href = '/adminDashboard';</script>";
+        } elseif($user->getisMod()) {
+            echo "<script>window.location.href = '/modDashboard';</script>";
+        } else {
+            echo "<script>window.location.href = '/userDashboard';</script>";
+        }
         exit();
 
     }

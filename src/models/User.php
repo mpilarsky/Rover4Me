@@ -7,9 +7,11 @@ class User{
     private $name;
     private $surname;
     private $age;
+    private $isMod;
+    private $isAdmin;
 
     public function __construct(
-        $id, $email, $password, $name, $surname, $age
+        $id, $email, $password, $name, $surname, $age, $isAdmin = 0, $isMod = 0
     ) {
         $this->id= $id;
         $this->email = $email;
@@ -17,6 +19,9 @@ class User{
         $this->name = $name;
         $this->surname = $surname;
         $this->age = $age;
+        $this->isMod = $isMod;
+        $this->isAdmin = $isAdmin;
+
     }
     public function getId() {
         return $this->id;
@@ -40,5 +45,11 @@ class User{
 
     public function getAge() {
         return $this->age;
+    }
+    public function getisMod() {
+        return $this->isMod;
+    }
+    public function getisAdmin() {
+        return $this->isAdmin;
     }
 }
